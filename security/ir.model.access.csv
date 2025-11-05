@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employee_travel_user,access_employee_travel_user,model_employee_travel,,1,1,1,0
+access_employee_travel_manager,access_employee_travel_manager,model_employee_travel,employee_travel.group_travel_manager,1,1,1,1
+access_employee_travel_daf,access_employee_travel_daf,model_employee_travel,employee_travel.group_travel_daf,1,1,1,1
+access_employee_travel_vehicle_user,access_employee_travel_vehicle_user,model_employee_travel_vehicle,,1,0,0,0
+access_employee_travel_vehicle_manager,access_employee_travel_vehicle_manager,model_employee_travel_vehicle,employee_travel.group_travel_manager,1,1,1,1
+access_travel_city_user,access_travel_city_user,model_travel_city,,1,0,0,0
+access_travel_city_manager,access_travel_city_manager,model_travel_city,employee_travel.group_travel_manager,1,1,1,1
+access_travel_city_daf,access_travel_city_daf,model_travel_city,employee_travel.group_travel_daf,1,1,1,1

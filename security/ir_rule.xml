@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <!-- Record rule: Users can only see their own travel requests unless they are manager/DAF -->
+  <record id="travel_request_user_rule" model="ir.rule">
+    <field name="name">Employee Travel: User Access</field>
+    <field name="model_id" ref="model_employee_travel"/>
+    <field name="domain_force">[
+      '|', 
+      ('employee_id.user_id', '=', user.id),
+      ('create_uid', '=', user.id)
+    ]</field>
+    <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_unlink" eval="False"/>
+  </record>
+
+  <!-- Record rule: Managers can see requests from their subordinates -->
+  <record id="travel_request_manager_rule" model="ir.rule">
+    <field name="name">Employee Travel: Manager Access</field>
+    <field name="model_id" ref="model_employee_travel"/>
+    <field name="domain_force">[(1, '=', 1)]</field>
+    <field name="groups" eval="[(4, ref('employee_travel.group_travel_manager'))]"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+  </record>
+
+  <!-- Record rule: DAF can see all approved requests -->
+  <record id="travel_request_daf_rule" model="ir.rule">
+    <field name="name">Employee Travel: DAF Access</field>
+    <field name="model_id" ref="model_employee_travel"/>
+    <field name="domain_force">[(1, '=', 1)]</field>
+    <field name="groups" eval="[(4, ref('employee_travel.group_travel_daf'))]"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+  </record>
+</odoo>

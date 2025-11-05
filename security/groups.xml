@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="group_travel_manager" model="res.groups">
+    <field name="name">Travel Manager</field>
+    <field name="category_id" ref="base.module_category_human_resources"/>
+  </record>
+
+  <record id="group_travel_daf" model="res.groups">
+    <field name="name">Travel DAF</field>
+    <field name="category_id" ref="base.module_category_administration"/>
+  </record>
+</odoo>

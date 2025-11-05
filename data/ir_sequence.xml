@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="seq_employee_travel" model="ir.sequence">
+    <field name="name">Employee Travel Sequence</field>
+    <field name="code">employee.travel</field>
+    <field name="prefix">TR</field>
+    <field name="padding">4</field>
+    <field name="number_next">1</field>
+  </record>
+</odoo>

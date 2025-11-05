@@ -1,0 +1,22 @@
+{
+    'name': 'Employee Travel Management',
+    'version': '18.0.1.0.0',
+    'summary': 'Gestion des déplacements des employés (demandes, validation, DAF)',
+    'description': 'Permet aux employés de soumettre des demandes de déplacement, workflow de validation par manager puis prise en charge par la DAF.',
+    'author': 'Auto-generated',
+    'category': 'Human Resources',
+    'depends': ['base', 'hr', 'mail'],
+    'data': [
+        'data/ir_sequence.xml',
+        'security/groups.xml',
+        'security/ir.model.access.csv',
+        'security/ir_rule.xml',
+        'views/travel_views.xml',
+        'views/city_views.xml',
+        'data/city_data.xml',
+    ],
+    'installable': True,
+    'application': False,
+    'auto_install': False,
+    'license': 'LGPL-3',
+}
